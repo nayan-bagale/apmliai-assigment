@@ -1,7 +1,11 @@
+import Header from "@/components/layout/header"
 
 const Dashboard = () => {
     return (
-        <div>Dashboard</div>
+        <div>
+            <Header title="Dashboard" />
+
+        </div>
     )
 }
 

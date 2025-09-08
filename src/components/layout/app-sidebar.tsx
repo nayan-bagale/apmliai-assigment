@@ -28,8 +28,8 @@ import {
     IconUserCircle
 } from '@tabler/icons-react';
 import { Link } from "react-router";
-import { OrgSwitcher } from "./org-switcher";
-import { UserAvatarProfile } from "./user-avatar-profile";
+import { OrgSwitcher } from "../org-switcher";
+import { UserAvatarProfile } from "../user-avatar-profile";
 
 // Menu items.
 const items = [

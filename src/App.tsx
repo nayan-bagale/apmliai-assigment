@@ -3,7 +3,7 @@ import './App.css'
 import Companies from './Pages/Companies'
 import Dashboard from './Pages/Dashboard'
 import Login from './Pages/Login'
-import Layout from './components/layout'
+import Layout from './components/layout/layout'
 
 function App() {
 

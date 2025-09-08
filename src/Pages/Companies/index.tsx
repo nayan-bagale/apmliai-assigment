@@ -1,7 +1,10 @@
+import Header from "@/components/layout/header"
 
 const Companies = () => {
   return (
-    <div>Companies</div>
+    <div>
+      <Header title="List of companies" />
+    </div>
   )
 }
 
