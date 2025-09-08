@@ -52,8 +52,6 @@ const items = [
 
 
 export function AppSidebar() {
-
-
     return (
         <Sidebar collapsible="icon" >
             <SidebarHeader>

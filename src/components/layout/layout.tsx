@@ -4,7 +4,7 @@ import { Outlet } from "react-router"
 
 export default function Layout() {
     return (
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={false}>
             <AppSidebar />
             <main className=" flex flex-1 flex-col">
                 <SidebarInset>

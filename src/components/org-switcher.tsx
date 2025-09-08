@@ -16,7 +16,7 @@ export function OrgSwitcher() {
                             size='lg'
                             className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
                         >
-                            <div className='bg-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg'>
+                            <div className='bg-secondary text-sidebar-accent flex aspect-square size-8 items-center justify-center rounded-lg'>
                                 <Building2 className='size-4' />
                             </div>
                             <div className='flex flex-col gap-0.5 leading-none'>
