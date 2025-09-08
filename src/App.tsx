@@ -4,11 +4,12 @@ import Companies from './Pages/Companies'
 import Dashboard from './Pages/Dashboard'
 import Login from './Pages/Login'
 import Layout from './components/layout/layout'
+import Home from './Pages/Home'
 
 function App() {
-
   return (
     <Routes>
+      <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
       <Route element={<Layout />}>
         <Route path='/dashboard' element={<Dashboard />} />

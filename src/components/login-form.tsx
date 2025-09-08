@@ -2,13 +2,21 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { useNavigate } from "react-router"
 
 export function LoginForm({
     className,
     ...props
 }: React.ComponentProps<"form">) {
+
+    const navigate = useNavigate();
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        navigate('/dashboard');
+    }
+
     return (
-        <form className={cn("flex flex-col gap-6", className)} {...props}>
+        <form onSubmit={handleSubmit} className={cn("flex flex-col gap-6", className)} {...props}>
             <div className="flex flex-col gap-2">
                 <h1 className="text-2xl font-bold">Login</h1>
                 <p className="text-muted-foreground text-sm text-balance">
