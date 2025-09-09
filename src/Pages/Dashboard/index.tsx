@@ -1,4 +1,5 @@
 import EntityWisePerformanceTable from "@/components/entity-wise-performance-table"
+import InsightCard from "@/components/insights-card"
 import Header from "@/components/layout/header"
 import MarginTrendChart from "@/components/margin-trend-chart"
 import RevenueProfitTrendChart from "@/components/revenue-profit-trend-chart"
@@ -13,11 +14,12 @@ const Dashboard = () => {
                     <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                         <SectionCards />
                         <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 @xl/main:grid-cols-3">
-                            <RevenueProfitTrendChart/>
+                            <RevenueProfitTrendChart />
                             <MarginTrendChart />
                         </div>
                         <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 @xl/main:grid-cols-3">
-                            <EntityWisePerformanceTable/>
+                            <EntityWisePerformanceTable />
+                            <InsightCard />
                         </div>
                         {/* <DataTable data={data} /> */}
                     </div>

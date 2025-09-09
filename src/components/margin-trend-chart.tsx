@@ -55,7 +55,7 @@ function MarginTrendChart() {
                 <CardDescription>(Last 6 Months)</CardDescription>
             </CardHeader>
             <CardContent>
-                <ChartContainer className=" h-[300px]" config={chartConfig}>
+                <ChartContainer className=" w-full h-[300px]" config={chartConfig}>
                     <BarChart accessibilityLayer data={chartData}>
                         <CartesianGrid vertical={false} />
                         <XAxis
