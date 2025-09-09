@@ -1,13 +1,12 @@
-import { ChartLine, TrendingUp } from "lucide-react"
+import { ChartLine } from "lucide-react"
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts"
 
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
     CardHeader,
-    CardTitle,
+    CardTitle
 } from "@/components/ui/card"
 import {
     type ChartConfig,

@@ -1,4 +1,3 @@
-import { ChartBar, ChartBarBig, TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
 
 import {
