@@ -13,11 +13,11 @@ const Dashboard = () => {
                 <div className="@container/main flex flex-1 flex-col gap-2">
                     <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
                         <SectionCards />
-                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 @xl/main:grid-cols-3">
+                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
                             <RevenueProfitTrendChart />
                             <MarginTrendChart />
                         </div>
-                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 @xl/main:grid-cols-3">
+                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 lg/main:grid-cols-3">
                             <EntityWisePerformanceTable />
                             <InsightCard />
                         </div>

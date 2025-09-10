@@ -1,5 +1,3 @@
-"use client"
-
 import {
     type ColumnDef,
     type ColumnFiltersState,
@@ -12,7 +10,7 @@ import {
     useReactTable,
     type VisibilityState,
 } from "@tanstack/react-table"
-import { Building2, Globe, Lightbulb, Palette, Smartphone, TrendingDown, TrendingUp, Zap } from "lucide-react"
+import { TrendingDown, TrendingUp } from "lucide-react"
 import * as React from "react"
 
 
@@ -24,112 +22,34 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import type { CompanyPerformance } from "@/constant/company-performance"
+import companyPerformance from "@/constant/company-performance"
+import { cn } from "@/lib/utils"
 import { IconList } from "@tabler/icons-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
-import { cn } from "@/lib/utils"
 
-const data: Payment[] = [
 
-    {
-        id: 1,
-        name: "NextGen Software Ltd.",
-        icon: Building2,
-        revenue: "€68.3M",
-        netProfit: "€8.1M",
-        ebitda: "26.5%",
-        ebitdaChange: "positive",
-        cashFlow: "€6.8M",
-        wcCycle: "52",
-    },
-    {
-        id: 2,
-        name: "Global Tech Solutions",
-        icon: Globe,
-        revenue: "€62.6M",
-        netProfit: "€6.3M",
-        ebitda: "19.3%",
-        ebitdaChange: "positive",
-        cashFlow: "€4.5M",
-        wcCycle: "76",
-    },
-    {
-        id: 3,
-        name: "Innovative Tech Solutions",
-        icon: Lightbulb,
-        revenue: "€54.6M",
-        netProfit: "€5.3M",
-        ebitda: "18.5%",
-        ebitdaChange: "positive",
-        cashFlow: "€3.8M",
-        wcCycle: "45",
-    },
-    {
-        id: 4,
-        name: "Creative Design Group",
-        icon: Palette,
-        revenue: "€36.5M",
-        netProfit: "€4.1M",
-        ebitda: "0.9%",
-        ebitdaChange: "positive",
-        cashFlow: "€2.3M",
-        wcCycle: "88",
-    },
-    {
-        id: 5,
-        name: "Digital Dynamics Inc.",
-        icon: Smartphone,
-        revenue: "€30.2M",
-        netProfit: "€3.9M",
-        ebitda: "-3.9%",
-        ebitdaChange: "negative",
-        cashFlow: "€1.9M",
-        wcCycle: "25",
-    },
-    {
-        id: 6,
-        name: "Helio Digital Innovations",
-        icon: Zap,
-        revenue: "€22.3M",
-        netProfit: "€0.3M",
-        ebitda: "-1.5%",
-        ebitdaChange: "negative",
-        cashFlow: "€0.8M",
-        wcCycle: "36",
-    },
-]
-
-export type Payment = {
-    id: number
-    name: string
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-    revenue: string
-    netProfit: string
-    ebitda: string
-    ebitdaChange: "positive" | "negative"
-    cashFlow: string
-    wcCycle: string
-}
-
-const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<CompanyPerformance>[] = [
     {
         accessorKey: "name",
         header: "Company Name",
         cell: ({ row }) => {
             const Icon = row.original.icon
 
-            return(
-            <div className="flex items-center space-x-3">
-                <div
-                    className={cn(
-                        "w-6 h-6 rounded-full flex items-center justify-center",
-                        "bg-green-500/20" ,
-                    )}
-                >
-                    <Icon className=" w-5" />
-                </div>
+            return (
+                <div className="flex items-center space-x-3">
+                    <div
+                        className={cn(
+                            "w-6 h-6 rounded-full flex items-center justify-center",
+                            "bg-green-500/20",
+                        )}
+                    >
+                        <Icon className=" w-5" />
+                    </div>
                     <span className="text-card-foreground font-medium">{row.getValue('name')}</span>
-            </div>
-        )},
+                </div>
+            )
+        },
     },
     {
         accessorKey: "revenue",
@@ -147,7 +67,7 @@ const columns: ColumnDef<Payment>[] = [
     {
         accessorKey: "ebitda",
         header: "EBITDA Margin",
-        cell: ({ row}) => {
+        cell: ({ row }) => {
             const isPositiveEbitda = row.original.ebitdaChange === "positive"
             return (<div className="flex items-center space-x-2">
                 {isPositiveEbitda ? (
@@ -183,7 +103,7 @@ function EntityWisePerformanceTable() {
     const [rowSelection, setRowSelection] = React.useState({})
 
     const table = useReactTable({
-        data,
+        data: companyPerformance,
         columns,
         onSortingChange: setSorting,
         onColumnFiltersChange: setColumnFilters,
