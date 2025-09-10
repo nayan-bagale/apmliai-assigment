@@ -25,7 +25,6 @@ import {
 } from "@/components/ui/table"
 import type { ComapniesDataT } from "@/constant/company-list"
 import companiesData from "@/constant/company-list"
-import { useNavigate } from "react-router"
 import AddCompany from "./add-company"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Badge } from "./ui/badge"
@@ -109,9 +108,6 @@ const columns: ColumnDef<ComapniesDataT>[] = [
 ]
 
 export function ListOfCompanies() {
-
-    const navigate = useNavigate();
-
     const [sorting, setSorting] = React.useState<SortingState>([])
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
