@@ -10,7 +10,7 @@ import {
     useReactTable,
     type VisibilityState,
 } from "@tanstack/react-table"
-import { Filter, Plus, TableProperties, TrendingDown, TrendingUp, Upload } from "lucide-react"
+import { Filter, TableProperties, TrendingDown, TrendingUp, Upload } from "lucide-react"
 import * as React from "react"
 
 import { Button } from "@/components/ui/button"
@@ -23,12 +23,13 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import type { ComapniesDataT } from "@/constant/company-list"
+import companiesData from "@/constant/company-list"
 import { useNavigate } from "react-router"
+import AddCompany from "./add-company"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Badge } from "./ui/badge"
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "./ui/pagination"
-import type { ComapniesDataT } from "@/constant/company-list"
-import companiesData from "@/constant/company-list"
 
 
 const columns: ColumnDef<ComapniesDataT>[] = [
@@ -158,9 +159,7 @@ export function ListOfCompanies() {
                     <Button variant="outline" className="text-blue-500 hover:text-blue-500 border-blue-500">
                         <Upload /> Export
                     </Button>
-                    <Button onClick={() => navigate("/add-company")} variant="outline" className="text-blue-500 hover:text-blue-500 border-blue-500">
-                        <Plus /> Add Company
-                    </Button>
+                    <AddCompany/>
                 </div>
             </div>
             <div className="px-6">
@@ -251,7 +250,6 @@ export function ListOfCompanies() {
                     </Table>
                 </div>
             </div>
-
         </div>
     )
 }

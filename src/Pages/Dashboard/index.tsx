@@ -17,11 +17,10 @@ const Dashboard = () => {
                             <RevenueProfitTrendChart />
                             <MarginTrendChart />
                         </div>
-                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 lg/main:grid-cols-3">
+                        <div className="px-4 lg:px-6 grid grid-cols-1 gap-4 lg:grid-cols-3">
                             <EntityWisePerformanceTable />
                             <InsightCard />
                         </div>
-                        {/* <DataTable data={data} /> */}
                     </div>
                 </div>
             </div>
