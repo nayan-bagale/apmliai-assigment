@@ -5,8 +5,12 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from './ui/form'
 import { Input } from './ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'
+import { useAppDispatch } from '@/redux/redux-hooks'
+import { addCompany } from '@/redux/features/companiesSlice'
 
 const AddCompany = () => {
+
+    const dispatch = useAppDispatch();
 
     // 1. Define your form.
     const form = useForm({
@@ -37,7 +41,18 @@ const AddCompany = () => {
     }) {
         // Do something with the form values.
         // ✅ This will be type-safe and validated.
-        console.log(values)
+        const newCompany = {
+            id: Math.floor(Math.random() * 1000), // Random ID for demo purposes
+            name: values.companyName,
+            ceo: { name: values.ceo, avatar: "/placeholder.svg?height=32&width=32" },
+            revenue: values.revenue,
+            profit: { value: values.profit, status: values.profitStatus as "positive" | "negative" },
+            ebitda: values.ebitda,
+            grossMargin: { value: values.grossMargin, trend: values.grossMarginTrend as "up" | "down" },
+            insights: values.insights.split(',').map(insight => insight.trim()), // Split by comma and trim spaces
+        }
+        dispatch(addCompany(newCompany));
+        form.reset();
     }
 
     return (

@@ -24,7 +24,7 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import type { ComapniesDataT } from "@/constant/company-list"
-import companiesData from "@/constant/company-list"
+import { useAppSelector } from "@/redux/redux-hooks"
 import AddCompany from "./add-company"
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar"
 import { Badge } from "./ui/badge"
@@ -115,6 +115,8 @@ export function ListOfCompanies() {
     const [columnVisibility, setColumnVisibility] =
         React.useState<VisibilityState>({})
     const [rowSelection, setRowSelection] = React.useState({})
+
+    const companiesData = useAppSelector((state) => state.companies.companies);
 
     const table = useReactTable({
         data: companiesData,
